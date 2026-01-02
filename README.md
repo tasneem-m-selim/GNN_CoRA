@@ -25,6 +25,20 @@ The final ranking is based on **Macro F1-score** on a hidden test set.
 
 ---
 
+📊 Dataset Details
+
+⚠️ Note on Dataset Difficulty (Important)
+
+To increase the difficulty level and encourage robust model design, controlled noise has been added to the dataset.
+
+The provided dataset is NOT identical to the original Cora benchmark
+
+Participants must work with the provided files
+
+Replacing the data with the original Cora dataset is not allowed
+
+This design choice ensures a fair comparison between methods and evaluates the ability of models to generalize under noisy and imperfect real-world conditions.
+
 ## 📊 Dataset Details
 
 The dataset is derived from the **Cora citation network**.
