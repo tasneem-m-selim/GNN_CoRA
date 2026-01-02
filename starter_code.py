@@ -8,8 +8,8 @@ print("--- Step 1: Loading Data from CSV Files ---")
 
 # 1. Load the 4 CSV files
 # Note: These files must be in the same folder as this script
-df_train_val = pd.read_csv('/content/drive/MyDrive/Learn/gnn/data/train_val_labeled.csv')
-df_adj = pd.read_csv('/content/drive/MyDrive/Learn/gnn/data/adjacency_matrix.csv', header=None).values.astype(np.float32)
+df_train_val = pd.read_csv('.../train_val_labeled.csv')
+df_adj = pd.read_csv('.../adjacency_matrix.csv', header=None).values.astype(np.float32)
 
 # --- Step 2: Reconstruct Full Feature & Label Matrices ---
 num_nodes = 2708
@@ -114,7 +114,7 @@ print("Training completed!")
 
 
 # 8. Load Test Features
-df_test_feat = pd.read_csv('/content/drive/MyDrive/Learn/gnn/data/test_features_only.csv')
+df_test_feat = pd.read_csv('.../test_features_only.csv')
 test_ids = df_test_feat['id'].values
 
 # 9. Update the Full Feature Matrix
