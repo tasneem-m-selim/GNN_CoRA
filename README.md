@@ -21,8 +21,6 @@ Train a model that accurately predicts the class labels of **unlabeled test node
 * Node features
 * Graph connectivity
 
-The final ranking is based on **Macro F1-score** on a hidden test set.
-
 ---
 
 ## 📊 Dataset Details
