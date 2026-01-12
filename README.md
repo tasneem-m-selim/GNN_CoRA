@@ -107,10 +107,62 @@ This will:
 * Generate a `submission.csv` file
 
 ---
+## 📝 How to Submit Your Results
+
+Follow the steps below to submit your predictions to the competition leaderboard.
+
+---
+
+### Step 1: Fork the Repository
+1. Go to the competition repository: https://github.com/Tasneem-Selim-Researcher/GNN_CoRA_Competition 
+2. Click the **Fork** button (top-right corner)
+3. You will be automatically redirected to the **Create new fork** page
+4. Click **Create fork**
+5. Wait for the fork to be created
+
+---
+
+### Step 2: Navigate to Your Forked Repository
+After forking, you should be redirected to your own repository
+
+
+---
+
+### Step 3: Go to the Submission Folder
+1. Open the `submission/` folder inside your forked repository
+
+---
+
+### Step 4: Upload Your Submission File
+1. Click **Add file**
+2. Select **Upload files**
+3. Drag and drop your **CSV** submission file **OR** click **choose your files**
+
+📌 **File naming rule (mandatory):** **Example:** `Team9.csv`
+
+---
+
+### Step 5: Commit Your File
+1. Add a short commit message (e.g., `Add submission Team9`)
+2. Click **Commit changes**
+
+---
+
+### Step 6: Create a Pull Request
+1. After committing, GitHub will display:
+2. Click **1 commit ahead**
+3. Click **Create Pull Request** (you will be redirected to the *Open Pull Request* page)
+4. Add a clear title, for example: Team9
+5. Click **Create Pull Request**
+
+✅ Your submission will be reviewed and evaluated, and the results will be added to the leaderboard.
+
+---
+
 
 ## 📝 Submission Format
 
-Participants must submit a CSV file named **`submission.csv`** with the following format:
+Participants must submit a CSV file named **`xxx.csv`** with the following format:
 
 ```csv
 id,target
