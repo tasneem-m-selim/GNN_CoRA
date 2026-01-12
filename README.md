@@ -51,7 +51,7 @@ The dataset is derived from the **Cora citation network**.
 ### Data Splits (Standard Cora Protocol)
 
 * **Training nodes**: 140 (20 per class)
-* **Validation nodes**: 500
+* **Validation nodes**: 500 
 * **Test nodes**: 1,000 (labels hidden)
 
 ---
