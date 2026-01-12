@@ -42,10 +42,23 @@ jobs:
       # 5️⃣ Evaluate all submissions
       - name: Evaluate submissions
         run: |
-          for file in submission/*.csv; do
-            echo "Evaluating $file..."
-            python evaluate.py "$file" "private_data/test_labels_only.csv"
-          done
+            # Get all CSVs that changed in this push
+            files=$(git diff --name-only ${{ github.sha }}^ ${{ github.sha }} | grep 'submission/.*\.csv' || true)
+            if [ -z "$files" ]; then
+                echo "No new submissions to evaluate."
+            else
+              for file in $files; do
+                echo "Evaluating $file..."
+                python evaluate.py "$file" "private_data/test_labels_only.csv"
+              done
+            fi
+          #         for file in submission/*.csv; do
+          #   echo "Evaluating $file..."
+          #   python evaluate.py "$file" "private_data/test_labels_only.csv"
+          # done
+        
+    
+
       # 8️⃣ Clean up before committing (remove untracked files we don't want)
       - name: Clean untracked files
         run: |
