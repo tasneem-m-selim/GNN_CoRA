@@ -76,11 +76,6 @@ starter_code/
 the dataset is hosted externally on **Google Drive**.
 
 ### 🔗 **Download Link**
-➡️ [Click here to access the dataset](
-### Public Files:
-the dataset is hosted externally on **Google Drive**.
-
-### 🔗 **Download Link**
 ➡️ [Click here to access the Adjacency Matrix](https://drive.google.com/file/d/17SKE86QU9bBahpdUIeFNjJqRg05QFFfx/view?usp=sharing)
 
 ➡️ [Click here to access the Train and Validation data](https://drive.google.com/file/d/1ruYD0JdX_yGv1of_EUM9lcv0t6lmZ3tX/view?usp=sharing)
