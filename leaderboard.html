@@ -68,7 +68,7 @@
 </table>
 
 <script>
-fetch('../final_leaderboard.csv')
+fetch('final_leaderboard.csv')
     .then(response => response.text())
     .then(csvText => {
         const rows = csvText
