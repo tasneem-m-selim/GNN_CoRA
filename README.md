@@ -99,7 +99,7 @@ Follow the steps below to submit your predictions to the competition leaderboard
 ---
 
 ### Step 1: Fork the Repository
-1. Go to the competition repository: https://github.com/Tasneem-Selim-Researcher/GNN_CoRA_Competition 
+1. Go to the competition repository: https://github.com/Tasneem-Selim-Researcher/GNN_CoRA 
 2. Click the **Fork** button (top-right corner)
 3. You will be automatically redirected to the **Create new fork** page
 4. Click **Create fork**
