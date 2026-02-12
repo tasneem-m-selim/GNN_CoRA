@@ -70,7 +70,7 @@ the dataset is hosted externally on **Google Drive**.
 
 ➡️ [Click here to access the Train and Validation data](https://drive.google.com/file/d/1ruYD0JdX_yGv1of_EUM9lcv0t6lmZ3tX/view?usp=sharing)
 
-➡️ [Click here to access the Train and Validation data](https://drive.google.com/file/d/19AdwSvFBT_3n0wiQ_rwkSWBD97nwAdpt/view?usp=sharing)
+➡️ [Click here to access the Test features only](https://drive.google.com/file/d/19AdwSvFBT_3n0wiQ_rwkSWBD97nwAdpt/view?usp=sharing)
 
 ### Private Files:
 - Test_data → Hidden ground-truth data used for automatic evaluation  
