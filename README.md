@@ -153,7 +153,7 @@ id,target
 
 Submissions are evaluated using:
 
-* **Accuracy** (primary metric)
+* **Accuracy** 
 
 Evaluation is performed on a **hidden test set** to prevent data leakage.
 
@@ -185,17 +185,9 @@ Participants are encouraged to improve upon this baseline using:
 
 ---
 
-## 🕐 Submission Limits
-
-- Each Team should name the file something like: **Team1**.
-- Only the **latest submission** counts toward the leaderboard.
-
----
-
 ## 🧾 Leaderboard
 
 - Leaderboard scores are automatically updated based on accuracy.
-- In case of identical scores, the earlier submission time will be used as a tiebreaker.
 
 ---
 
