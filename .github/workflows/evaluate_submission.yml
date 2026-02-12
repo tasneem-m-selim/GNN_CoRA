@@ -1,24 +1,27 @@
 name: Evaluate Submission
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize]
     paths:
       - "submission/*.csv"
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   evaluate:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Checkout PR branch
       - name: Checkout PR branch
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
+      # 2️⃣ Setup Python
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -26,21 +29,33 @@ jobs:
 
       - run: pip install pandas scikit-learn numpy
 
-      - name: Evaluate
+      # 3️⃣ Run evaluation
+      - name: Evaluate submission
         run: |
           FILE=$(ls submission/*.csv | head -n 1)
+          echo "Evaluating $FILE"
           python evaluate.py "$FILE"
 
+      # 4️⃣ Save updated leaderboard temporarily
+      - name: Save leaderboard
+        run: cp final_leaderboard.csv /tmp/final_leaderboard.csv
+
+      # 5️⃣ Checkout main branch
       - name: Checkout main
         uses: actions/checkout@v4
         with:
           ref: main
           fetch-depth: 0
 
+      # 6️⃣ Restore updated leaderboard into main
+      - name: Restore leaderboard
+        run: cp /tmp/final_leaderboard.csv final_leaderboard.csv
+
+      # 7️⃣ Commit & push leaderboard
       - name: Commit leaderboard update
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add final_leaderboard.csv
-          git commit -m "Update leaderboard from PR #${{ github.event.pull_request.number }}" || echo "No changes"
-          git push
+          git diff --cached --quiet || git commit -m "Update leaderboard from PR #${{ github.event.pull_request.number }}"
+          git push origin main
