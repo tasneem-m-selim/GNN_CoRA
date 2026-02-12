@@ -55,7 +55,7 @@ th {{ background-color: #2c3e50; color: white; }}
 tr:nth-child(even) {{ background-color: #f2f2f2; }}
 .gold {{ background-color: #FFD700; color: black; font-weight: bold; }}
 .silver {{ background-color: #C0C0C0; color: black; font-weight: bold; }}
-.bronze {{ background-color: #CD7F32; color: white; font-weight: bold; }}
+.bronze {{ background-color: #CD7F32; color: black; font-weight: bold; }}
 @media (max-width: 768px) {{ table {{ width: 90%; }} }}
 </style>
 </head>
