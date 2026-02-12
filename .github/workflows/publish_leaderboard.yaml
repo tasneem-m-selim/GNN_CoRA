@@ -4,7 +4,7 @@ on:
   push:
     branches: main
     paths:
-      - "leaderboard.csv"
+      - "final_leaderboard.csv"
 
 permissions:
   contents: write
