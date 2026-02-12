@@ -73,7 +73,7 @@ the dataset is hosted externally on **Google Drive**.
 ➡️ [Click here to access the Test features only](https://drive.google.com/file/d/19AdwSvFBT_3n0wiQ_rwkSWBD97nwAdpt/view?usp=sharing)
 
 ### Private Files:
-- Test_data → Hidden ground-truth data used for automatic evaluation  
+- Test_label → Hidden ground-truth data used for automatic evaluation  
 
 ---
 
