@@ -77,19 +77,17 @@ Follow the steps below to submit your predictions to the competition leaderboard
 
 ---
 
-### Step 1: Fork the Repository
+#### Step 1: Fork the Repository
 
-### Step 2: Navigate to Your Forked Repository
+#### Step 2: Navigate to Your Forked Repository
 
-### Step 3: Go to the Submission Folder
+#### Step 3: Go to the Submission Folder
 
-### Step 4: Upload Your Submission File
+#### Step 4: Upload Your Submission File
 
-📌 **File naming rule (mandatory):** yourName **Example:** `MonaAli.csv`
+#### Step 5: Commit Your File
 
-### Step 5: Commit Your File
-
-### Step 6: Create a Pull Request
+#### Step 6: Create a Pull Request
 
 ✅ Your submission will be reviewed and evaluated, and the results will be added to the leaderboard.
 
