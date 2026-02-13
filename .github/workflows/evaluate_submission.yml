@@ -19,7 +19,7 @@ jobs:
       - name: Debug 
         run: echo Triggered for PR ${{ github.event.pull_request.number }}
 
-            # 2️⃣ Checkout PR branch (submission only)
+      # 2️⃣ Checkout PR branch (submission only)
       - name: Checkout PR branch
         uses: actions/checkout@v4
         with:
