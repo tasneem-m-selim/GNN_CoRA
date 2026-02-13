@@ -28,17 +28,6 @@ Train a model that accurately predicts the class labels of **unlabeled test node
 
 ## 📊 Dataset Details
 
-⚠️ Note on Dataset Difficulty
-
-To increase the difficulty level and encourage robust model design, controlled noise has been added to the dataset.
-
-The provided dataset is NOT identical to the original Cora benchmark
-
-Participants must work with the provided files
-
-Replacing the data with the original Cora dataset is not allowed
-
-## 📊 Dataset Details
 
 The dataset is derived from the **Cora citation network**.
 
@@ -54,6 +43,16 @@ The dataset is derived from the **Cora citation network**.
 * **Training nodes**: 140 (20 per class)
 * **Validation nodes**: 500 
 * **Test nodes**: 1,000 (labels hidden)
+
+### Dataset Difficulty
+
+To increase the difficulty level and encourage robust model design, controlled Gaussian noise has been added to the dataset.
+
+The provided dataset is NOT identical to the original Cora benchmark
+
+Participants must work with the provided files
+
+Replacing the data with the original Cora dataset is not allowed
 
 ---
 
