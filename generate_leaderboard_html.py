@@ -48,8 +48,18 @@ html_content = """
 <style>
 body {{ font-family: Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 60px 0; }}
 h1 {{ text-align: center; margin-bottom: 40px; }}
-table {{ border-collapse: collapse; width: 66%; margin: 0 auto; background: white; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-radius: 10px; overflow: hidden; }}
-th, td {{ padding: 16px; text-align: center; }}
+table {{
+    border-collapse: collapse; 
+    width: 66%; 
+    margin: 0 auto; 
+    background: white; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08); 
+}}
+th, td {{
+    padding: 16px; 
+    text-align: center; 
+    border: 2px solid #2c3e50;  /* Added visible border */
+}}
 th {{ background-color: #2c3e50; color: white; font-size: 16px; }}
 tr:nth-child(even) {{ background-color: #f8f9fa; }}
 td:first-child {{ font-weight: bold; font-size: 18px; }}
