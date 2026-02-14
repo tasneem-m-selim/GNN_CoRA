@@ -84,7 +84,7 @@ Follow the steps below to submit your predictions to the competition leaderboard
 
 ✅ Your submission will be reviewed and evaluated, and the results will be added to the leaderboard.
 
-Each Participant is allowed **only for one submission**. Subsequent submissions will be automatically rejected
+Each participant is allowed **only for one submission**. Subsequent submissions will be automatically rejected
 
 ---
 
