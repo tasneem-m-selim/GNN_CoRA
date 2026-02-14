@@ -4,6 +4,12 @@
 
 This repository hosts the **Cora Node Classification Challenge**, a graph machine learning competition based on the **Cora citation network**. Participants are required to design and train **Graph Neural Network (GNN)** models to classify scientific papers into research topics using node features and graph structure.
 
+### Difficulty Level
+
+To increase the difficulty level and encourage robust model design, controlled Gaussian noise has been added to the dataset.
+
+The provided dataset is NOT identical to the original Cora benchmark, so participants must work with the provided files as replacing the data with the original Cora dataset is not allowed
+
 ## 🏆 Leaderboard
 - Leaderboard scores are automatically updated based on accuracy.
 - View the live leaderboard:  
@@ -43,16 +49,6 @@ The dataset is derived from the **Cora citation network**.
 * **Training nodes**: 140 (20 per class)
 * **Validation nodes**: 500 
 * **Test nodes**: 1,000 (labels hidden)
-
-### Dataset Difficulty
-
-To increase the difficulty level and encourage robust model design, controlled Gaussian noise has been added to the dataset.
-
-The provided dataset is NOT identical to the original Cora benchmark
-
-Participants must work with the provided files
-
-Replacing the data with the original Cora dataset is not allowed
 
 ---
 
