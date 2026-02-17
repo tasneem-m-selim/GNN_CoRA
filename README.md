@@ -112,9 +112,9 @@ Open CMD/terminal in the folder containing these files and Run the command:
 
 This will generate two files:
 
-`submission.enc → the encrypted submission`
+`submission.enc` → the encrypted submission
 
-`submission.enc.key → encryption key`
+`submission.enc.key` → encryption key
 
 Both files are required for submission. Do not submit the original CSV.
 
