@@ -133,8 +133,6 @@ Each participant is allowed **only for one submission**. Subsequent submissions 
 
 
 
-
-
 ## 📈 Evaluation Metric
 
 Submissions are evaluated using:
