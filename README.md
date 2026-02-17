@@ -76,7 +76,7 @@ Follow the steps below to submit your predictions to the competition leaderboard
 
 ### Step 3: Go to the Submission Folder
 
-### Step 4: Prepare the submission .csv locally
+### Step 4: Prepare the submission .csv locally 
 
 #### 📝 Submission Format
 
@@ -96,7 +96,7 @@ id,target
 * `target` must be an integer in `{0, 1, 2, 3, 4, 5, 6}`
 
 
-### Step 5: Encrypt Your Submission locally
+### Step 5: Encrypt Your Submission locally 
 
 **Make sure you have:**
 
