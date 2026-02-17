@@ -70,15 +70,15 @@ Follow the steps below to submit your predictions to the competition leaderboard
 
 ---
 
-#### Step 1: Fork the Repository
+### Step 1: Fork the Repository
 
-#### Step 2: Navigate to Your Forked Repository
+### Step 2: Navigate to Your Forked Repository
 
-#### Step 3: Go to the Submission Folder
+### Step 3: Go to the Submission Folder
 
-#### Step 4: Prepare the submission .csv
+### Step 4: Prepare the submission .csv
 
-##### 📝 Submission Format
+#### 📝 Submission Format
 
 Participants must submit a CSV file named **`submission.csv`** with the following format:
 
@@ -90,7 +90,7 @@ id,target
 ...
 ```
 
-### Rules
+#### Rules
 
 * `id` must match the provided test node IDs
 * `target` must be an integer in `{0, 1, 2, 3, 4, 5, 6}`
@@ -98,19 +98,19 @@ id,target
 ---
 
 
-#### Step 5: Encrypt Your Submission
+### Step 5: Encrypt Your Submission
 
-Make sure you have:
+**Make sure you have:**
 
 1- `encrypt_submission.py`
 2- `public_key.pem`
 3- `Your CSV file submission.csv`
 
-Open CMD/terminal in the folder containing these files and Run the command:
+**Open CMD/terminal in the folder containing these files and run the command:**
 
 `python encrypt_submission.py submission.csv submission.enc public_key.pem`
 
-This will generate two files:
+**This will generate two files:**
 
 `submission.enc` → the encrypted submission
 
