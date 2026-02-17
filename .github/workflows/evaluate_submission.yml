@@ -15,11 +15,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Debug trigger
+      # 1- Debug trigger
       - name: Debug
         run: echo "Triggered for PR #${{ github.event.pull_request.number }}"
 
-      # 2️⃣ Checkout PR branch (submission only)
+      # 2- Checkout PR branch (submission only)
       - name: Checkout PR branch
         uses: actions/checkout@v4
         with:
@@ -27,7 +27,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           path: pr_repo
 
-      # 3️⃣ Checkout MAIN branch (latest leaderboard)
+      # 3- Checkout MAIN branch (latest leaderboard)
       - name: Checkout main branch
         uses: actions/checkout@v4
         with:
@@ -35,7 +35,7 @@ jobs:
           path: main_repo
           fetch-depth: 0
 
-      # 4️⃣ Checkout private repo (true labels)
+      # 4- Checkout private repo (true labels)
       - name: Checkout private repo
         uses: actions/checkout@v4
         with:
@@ -43,7 +43,7 @@ jobs:
           token: ${{ secrets.PRIVATE_REPO_TOKEN }}
           path: private_data
 
-      # 5️⃣ Setup Python
+      # 5- Setup Python
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -52,12 +52,12 @@ jobs:
       - name: Install dependencies
         run: pip install pandas scikit-learn numpy cryptography
 
-      # 6️⃣ Copy encrypted submission from PR branch
+      # 6- Copy encrypted submission from PR branch
       - name: Copy encrypted submission
         run: |
           cp pr_repo/submission/*.enc main_repo/
 
-      # 7️⃣ Create private key file from GitHub Secret
+      # 7- Create private key file from GitHub Secret
       - name: Create private key file
         env:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
@@ -66,7 +66,7 @@ jobs:
           echo "$PRIVATE_KEY" > private_key.pem
           chmod 600 private_key.pem
 
-      # 8️⃣ Decrypt submission
+      # 8- Decrypt submission
       - name: Decrypt submission
         run: |
           cd main_repo
@@ -75,14 +75,14 @@ jobs:
           echo "Decrypting $ENC_FILE with key $KEY_FILE"
           python encryption/decrypt_submission.py "$ENC_FILE" "$KEY_FILE" decrypted_submission.csv private_key.pem
 
-      # 9️⃣ Evaluate decrypted submission
+      # 9- Evaluate decrypted submission
       - name: Evaluate submission
         run: |
           cd main_repo
           echo "Evaluating decrypted_submission.csv"
           python evaluate.py decrypted_submission.csv "../private_data/test_labels_only.csv"
 
-      # 🔟 Generate leaderboard HTML
+      # 10- Generate leaderboard HTML
       - name: Generate leaderboard HTML
         run: |
           cd main_repo
