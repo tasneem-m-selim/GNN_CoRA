@@ -103,6 +103,7 @@ jobs:
             git push origin HEAD:main
           else
             echo "No leaderboard changes to commit"
+          fi  
 
       # 12 Clean up sensitive files
       - name: Clean up decrypted files
