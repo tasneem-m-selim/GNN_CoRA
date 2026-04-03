@@ -4,7 +4,7 @@ import pandas as pd
 import tensorflow as tf
 
 DATA_DIR = "" 
-TEST_SUBMISSION_PATH = ""  # predictions file
+TEST_SUBMISSION_PATH = ""
 
 EDGE_PATH = os.path.join("edge_index.csv")
 X_PATH = os.path.join("x.csv")
@@ -13,9 +13,6 @@ YVA_PATH = os.path.join("y_val.csv")
 OUT_PATH ="TEST_SUBMISSION_PATH"
 
 
-# -----------------
-# seed = 25
-# -----------------
 SEED = 25
 os.environ["PYTHONHASHSEED"] = str(SEED)
 random.seed(SEED)
@@ -23,28 +20,16 @@ np.random.seed(SEED)
 tf.random.set_seed(SEED)
 
 
-# -----------------
-# load x
-# -----------------
 X = pd.read_csv(X_PATH).to_numpy(dtype=np.float32)  # (N,F)
 N, F = X.shape
 
-# -----------------
-# load edges: source,target
-# -----------------
 e = pd.read_csv(EDGE_PATH)
 src = e["source"].to_numpy(dtype=np.int64)
 dst = e["target"].to_numpy(dtype=np.int64)
 
-# if your edges are 1-based, uncomment:
-# src -= 1; dst -= 1
-
 good = (src >= 0) & (src < N) & (dst >= 0) & (dst < N)
 src, dst = src[good], dst[good]
 
-# -----------------
-# load labels: index,label
-# -----------------
 tr = pd.read_csv(YTR_PATH)
 va = pd.read_csv(YVA_PATH)
 
@@ -66,7 +51,6 @@ train_mask[tr_idx] = 1.0
 Y[va_idx, va_y] = 1.0
 val_mask[va_idx] = 1.0
 
-# -----------------
 # build normalized adjacency A_hat = D^-1/2 (A_undirected + I) D^-1/2
 # -----------------
 row = np.concatenate([src, dst, np.arange(N, dtype=np.int64)])
@@ -92,9 +76,6 @@ A_hat = tf.sparse.SparseTensor(
 )
 A_hat = tf.sparse.reorder(A_hat)
 
-# -----------------
-# 2-layer GCN (Keras Functional, no custom classes)
-# -----------------
 X_in = tf.keras.Input(shape=(F,), name="X")
 A_in = tf.keras.Input(shape=(None,), sparse=True, name="A_hat")
 
@@ -102,12 +83,7 @@ def spmm(inputs):
     h, a = inputs
     return tf.sparse.sparse_dense_matmul(a, h)
 
-# Keras 3: give output_shape so it can infer it
-propagate = tf.keras.layers.Lambda(
-    spmm,
-    output_shape=lambda input_shapes: input_shapes[0],
-    name="propagate",
-)
+propagate = tf.keras.layers.Lambda(spmm,output_shape=lambda input_shapes: input_shapes[0], name="propagate",)
 
 h = tf.keras.layers.Dense(16, use_bias=False)(X_in)
 h = propagate([h, A_in])
@@ -119,23 +95,11 @@ h = tf.keras.layers.Dense(C, use_bias=False)(h)
 out = tf.keras.layers.Activation("softmax")(h)
 
 model = tf.keras.Model([X_in, A_in], out)
-model.compile(
-    optimizer=tf.keras.optimizers.Adam(learning_rate=0.01),
-    loss="categorical_crossentropy",
-    weighted_metrics=["accuracy"],
-)
+model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.01), loss="categorical_crossentropy", weighted_metrics=["accuracy"],)
 
-model.fit(
-    x=[X, A_hat],
-    y=Y,
-    sample_weight=train_mask,
-    validation_data=([X, A_hat], Y, val_mask),
-    epochs=5,
-    batch_size=N,
-    verbose=2,
-)
+model.fit(x=[X, A_hat], y=Y, sample_weight=train_mask, validation_data=([X, A_hat], Y, val_mask),
+    epochs=5, batch_size=N, verbose=2)
 
-# -----------------
 # predict + save
 # -----------------
 proba = model.predict([X, A_hat], batch_size=N, verbose=0)
